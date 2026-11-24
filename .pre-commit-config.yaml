@@ -1,0 +1,129 @@
+
+repos:
+-   repo: local
+    hooks:
+    -   id: check-added-large-files
+        args: ['--maxkb=500']
+        exclude: ^hat_engine/
+        name: Check added large files.
+        entry: check-added-large-files
+        language: system
+-   repo: local
+    hooks:
+    -   id: end-of-file-fixer
+        exclude: ^hat_engine/
+        name: Fix end-of-file
+        entry: end-of-file-fixer
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: trailing-whitespace
+        exclude: ^hat_engine/
+        name: Trailing whitespace
+        entry: trailing-whitespace-fixer
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: check-merge-conflict
+        exclude: ^hat_engine/
+        name: Check merge conflict
+        entry: check-merge-conflict
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: check-docstring-first
+        exclude: ^hat_engine/
+        name: Check docstring first
+        entry: check-docstring-first
+        language: system
+        types: [python]
+# -   repo: local
+#     hooks:
+#     -   id: autoflake
+#         name: Remove unused imports.
+#         entry: autoflake -i --remove-all-unused-imports --ignore-init-module-imports --expand-star-imports -v
+#         language: system
+#         types: [python]
+-   repo: local
+    hooks:
+    -   id: isort
+        exclude: ^(hat_engine/|tmp_|qconfig_setting)
+        name: Check python imports.
+        entry: python3 -m isort --filter-files
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: black
+        exclude: ^(hat_engine/|tmp_|qconfig_setting)
+        name: Auto format python code.
+        entry: python3 -m black -l 79
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: flake8
+        exclude: ^hat_engine/
+        name: Check pep8.
+        entry: flake8
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: pydocstyle
+        name: Check docstring.
+        entry: pydocstyle
+        language: system
+        files: (?x)(^tools/|^heal/)
+        exclude: (?x)(^heal/visualize/navsim_vis/|^heal/data/datasets/navsim/|^heal/metrics/navsim/)
+        types: [python]
+# -   repo: local
+#     hooks:
+#     -   id: mypy
+#         name: Check static typing.
+#         entry: mypy
+#         language: system
+#         files: (?x)(^hat/)
+#         types: [python]
+
+-   repo: local
+    hooks:
+    -   id: import-linter
+        name: import-linter
+        exclude: ^hat_engine/
+        description: Import Linter allows you to define and enforce rules for the internal and external imports within your Python project.
+        entry: lint-imports
+        language: system
+        types: [python]
+        pass_filenames: false
+
+-   repo: local
+    hooks:
+    -   id: check-config-mutual-imports
+        name: check config mutual imports
+        entry: python3 dev/pre_commit/check_config_mutual_imports.py
+        language: system
+        files: ^configs/[^/]+/(train|predict|infer|deploy)\.py$
+        pass_filenames: false
+
+-   repo: local
+    hooks:
+    -   id: check-agent-docs-links
+        name: Check agent docs links
+        entry: python3 dev/pre_commit/check_agent_docs_links.py
+        language: system
+        files: ^agent_docs/.*\.md$
+        pass_filenames: false
+        always_run: true
+
+-   repo: local
+    hooks:
+    -   id: check-circular-imports
+        name: check circular imports
+        entry: python3 dev/pre_commit/check_circular_imports.py
+        language: system
+        files: ^(heal|configs|tools)/.*\.py$
+        pass_filenames: false

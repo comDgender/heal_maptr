@@ -1,0 +1,7 @@
+# Numba with CUDA 12+ NVVM IR 2.0 support (rotate_iou GPU kernels in KITTI metrics).
+# Keep separate from build.txt (numba==0.56.4) for CUDA 11 / legacy environments.
+# numpy must stay <1.25 for scipy==1.9.1 and must not auto-upgrade to 2.x.
+numba==0.60.0
+llvmlite==0.43.0
+numpy>=1.23.4,<1.25
+numba-cuda==0.30.4

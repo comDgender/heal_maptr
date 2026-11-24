@@ -1,0 +1,32 @@
+HEAL (Horizon Embedded AI Library)
+Copyright (c) 2026 Beijing Horizon Information Technology Co., Ltd. All Rights Reserved.
+
+THIRD-PARTY NOTICES
+This repository contains original code as well as code derived from third-party open-source projects. Unless otherwise specified, the original code in this repository is licensed under the Apache 2.0 License.
+Third-party components and modified derivatives included in this repository remain subject to their respective original licenses. The relevant third-party projects used in this repository are listed below.
+pytorch
+This repository includes code derived from [pytorch](GitHub - pytorch/pytorch: Tensors and Dynamic neural networks in Python with strong GPU acceleration), which is licensed under the BSD-3-clause License.
+See the original repository for more details.
+pytorch-lightning
+This repository includes code derived from [pytorch-lightning](GitHub - Lightning-AI/pytorch-lightning: Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+), which is licensed under the Apache 2.0 License.
+See the original repository for more details.
+tnt
+This repository includes code derived from [tnt](GitHub - meta-pytorch/tnt: A lightweight library for PyTorch training tools and utilities), which is licensed under the BSD-3-clause License.
+See the original repository for more details.
+torchtitan
+This repository includes code derived from [torchtitan](GitHub - pytorch/torchtitan: A PyTorch native platform for training generative AI models), which is licensed under the BSD-3-clause License.
+See the original repository for more details.
+mmdetection3d
+This repository includes code derived from [mmdetection3d](GitHub - open-mmlab/mmdetection3d at v1.4.0), which is licensed under the Apache 2.0 License.
+See the original repository for more details.
+mxnet
+This repository includes code derived from [mxnet](GitHub - apache/mxnet at 1.5.0), which is licensed under the Apache 2.0 License.
+See the original repository for more details.
+dlrover
+This repository includes code derived from [dlrover](GitHub - intelligent-machine-learning/dlrover: DLRover: An Automatic Distributed Deep Learning Syste), which is licensed under the Apache 2.0 License.
+See the original repository for more details.
+second.pytorch
+This repository includes code derived from [second.pytorch](GitHub - traveller59/second.pytorch: SECOND for KITTI/NuScenes object detection), which is licensed under the MIT License.
+See the original repository for more details.
+
+In addition to this file, individual source files or directories may include their own attribution and license notices where required. Users of this repository are responsible for complying with the applicable licenses of all included third-party components.
